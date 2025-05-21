@@ -11,3 +11,11 @@ user_id INT NOT NULL,
 PRIMARY KEY (user_id),
 FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
+CREATE TABLE orders(
+order_id INT NOT NULL AUTO_INCREMENT,
+user_id INT NOT NULL,
+product_id INT NOT NULL,
+PRIMARY KEY (order_id),
+FOREIGN KEY (user_id) REFERENCES users(user_id),
+FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
